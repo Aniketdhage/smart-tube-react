@@ -28,10 +28,16 @@ const VideoDetails = () => {
   } = videoDetails;
 
   return (
-    <Box minHeight={"95vh"}>
+    <Box minHeight={"90vh"}>
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
-          <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
+          <Box
+            sx={{
+              width: "100%",
+              position: "sticky",
+              top: "86px",
+            }}
+          >
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
               controls
@@ -43,13 +49,15 @@ const VideoDetails = () => {
             <Stack
               direction="row"
               justifyContent={"space-between"}
+              alignItems="center"
               sx={{
                 color: "#fff",
               }}
-              py={1}
+              // py={1}
+              // height="50px"
               px={2}
             >
-              <Link to={`/channel/${channelId}`}>
+              <Link to={`/channel/${channelId}`} style={{ display: "flex" }}>
                 <Typography color="#fff">{channelTitle}</Typography>
                 <CheckCircle
                   sx={{ fontSize: "12px", color: "gray", ml: "5px" }}
